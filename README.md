@@ -123,6 +123,14 @@ no caso de aplicações que já utilizavam alguma rota anterior a mudança reali
 - Repository
 - Service
 
+  
+## Requisitos para Startar Aplicação
+- Gradle 9.3.1
+- Spring Boot 3.5.10
+- Intellij
+- PgAdmin4 (PostgreSQL)
+- Postman (Para testar requisições)
+
 ## Como Startar Aplicação
 - Clone este repositório na sua máquina
 - Abra o projeto com o intellij
