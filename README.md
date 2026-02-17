@@ -71,7 +71,7 @@ no caso de aplicações que já utilizavam alguma rota anterior a mudança reali
   <tr>
     <th>Verbo</th>
     <th>Rota</th>
-    <th>Objeto na request</th>
+    <th>Body na request</th>
   </tr>
   <tr>
     <td>GET</td>
