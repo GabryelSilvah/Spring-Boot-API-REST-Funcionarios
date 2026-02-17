@@ -32,6 +32,7 @@ public class EnderecoService {
         this.funcionarioRepository = funcionarioRepository;
     }
 
+    //---------------------------------------------ListAll--------------------------------------------------------------
     public List<Endereco> listAll(int page) {
         //Buscando e convertendo cada registro para DTO
         Page<Endereco> enderecoEncontrados = enderecoRepository.findAll(PageRequest.of(page - 1, 10));
@@ -43,6 +44,7 @@ public class EnderecoService {
         return enderecoEncontrados.getContent();
     }
 
+    //---------------------------------------------ListById-------------------------------------------------------------
     public Endereco listById(Long id_endereco) {
         //Validando se foi encontrado registro com o ID informado
         Optional<Endereco> enderecoEncontrado = enderecoRepository.findById(id_endereco);
@@ -53,12 +55,12 @@ public class EnderecoService {
         return enderecoEncontrado.get();
     }
 
-
+    //---------------------------------------------ListByFuncionario----------------------------------------------------
     public List<Endereco> listByFk_funcionario(Long fk_funcionario) {
         return enderecoRepository.findByFk_funcionario(fk_funcionario);
     }
 
-
+    //---------------------------------------------Save-----------------------------------------------------------------
     public Endereco save(EnderecoInputDTO enderecoRecebido) {
         //Validando se CEP informado tem 8 dígitos
         if (String.valueOf(enderecoRecebido.getCep_endereco()).length() != 8) {
@@ -84,7 +86,7 @@ public class EnderecoService {
         return enderecoRepository.save(enderecoRecebido.convertToModel());
     }
 
-
+    //---------------------------------------------Update---------------------------------------------------------------
     public Endereco update(EnderecoInputDTO enderecoRecebido, Long id_endereco) {
 
         //Validando se o existe endereço informado tem vínculo ao funcionário que foi informado
@@ -141,6 +143,7 @@ public class EnderecoService {
         return enderecoRepository.save(enderecoEncontrado.get());
     }
 
+    //---------------------------------------------Delete---------------------------------------------------------------
     public void delete(Long id_endereco) {
         //Buscando endereço
         Endereco enderecoEncotrado = listById(id_endereco);
@@ -163,6 +166,7 @@ public class EnderecoService {
         enderecoRepository.delete(enderecoEncotrado);
     }
 
+    //---------------------------------------------DeleteByFuncionario--------------------------------------------------
     public void deleteByFk_funcionario(Long fk_funcionario) {
         //Deletar todos os endereços vinculados ao funcionário (recomendado usar quando o funcionário também for excluído)
         List<Endereco> enderecosEncontrados = enderecoRepository.findByFk_funcionario(fk_funcionario);

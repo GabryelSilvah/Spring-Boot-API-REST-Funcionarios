@@ -43,7 +43,7 @@ public class FuncionarioService {
         this.enderecoService = enderecoService;
     }
 
-
+    //---------------------------------------------ListAll--------------------------------------------------------------
     public List<Funcionario> listAll(int page) {
         //Buscando e convertendo cada registro para DTO
         Page<Funcionario> funcionariosEncontrados = funcionarioRepository.findAll(PageRequest.of(page - 1, 10));
@@ -55,7 +55,7 @@ public class FuncionarioService {
         return funcionariosEncontrados.getContent();
     }
 
-
+    //---------------------------------------------ListById-------------------------------------------------------------
     public Funcionario listById(Long id_funcionario) {
         //Validando se foi encontrado registro com o ID informado
         Optional<Funcionario> funcionarioEncontrado = funcionarioRepository.findById(id_funcionario);
@@ -66,6 +66,7 @@ public class FuncionarioService {
         return funcionarioEncontrado.get();
     }
 
+    //---------------------------------------------Save-----------------------------------------------------------------
     @Transactional
     public Funcionario save(FuncionarioInputDTO funcionarioRecebido) {
 
@@ -117,6 +118,7 @@ public class FuncionarioService {
         return funcionarioSalvo;
     }
 
+    //---------------------------------------------Update---------------------------------------------------------------
     @Transactional
     public Funcionario update(FuncionarioInputDTO funcionarioRecebido, Long id_funcionario) {
 
@@ -189,6 +191,7 @@ public class FuncionarioService {
         return funcionarioAlterado;
     }
 
+    //---------------------------------------------Update--Status-------------------------------------------------------
     @CacheEvict(value = "funcionario", allEntries = true)
     public Funcionario updateStatus(Long id_funcionario, Boolean status_funcionario) {
         //Buscando funcionário, com método que já valida se foi encontrado
@@ -199,7 +202,7 @@ public class FuncionarioService {
         return listById(id_funcionario);
     }
 
-
+    //---------------------------------------------Delete---------------------------------------------------------------
     @Transactional
     public void delete(Long id_funcionario) {
         //Usando método listById para buscar e validar registro com ID informado

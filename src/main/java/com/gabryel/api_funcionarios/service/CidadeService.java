@@ -21,6 +21,7 @@ public class CidadeService {
     }
 
 
+    //---------------------------------------------ListAll--------------------------------------------------------------
     public List<Cidade> listAll(int page) {
         //Buscando e convertendo cada registro para DTO
         Page<Cidade> cidadesEncontradas = cidadeRepository
@@ -35,6 +36,7 @@ public class CidadeService {
         return cidadesEncontradas.getContent();
     }
 
+    //---------------------------------------------ListById-------------------------------------------------------------
     public Cidade listById(Long id_cidade) {
         //Validando se foi encontrado registro com o ID informado
         Optional<Cidade> cidadeEncontrado = cidadeRepository.findById(id_cidade);
@@ -45,6 +47,7 @@ public class CidadeService {
         return cidadeEncontrado.get();
     }
 
+    //---------------------------------------------ListByName-----------------------------------------------------------
     public Cidade listByName(String nome_cidade) {
         //Validando se foi encontrado registro com o nome informado
         Optional<Cidade> cidadeEncontrado = cidadeRepository.findByName(nome_cidade);
@@ -55,6 +58,7 @@ public class CidadeService {
         return cidadeEncontrado.get();
     }
 
+    //---------------------------------------------Save-----------------------------------------------------------------
     public Cidade save(CidadeSimpleDTO cidadeRecebida) {
         //Validando se nome já existe
         Optional<Cidade> cidadeEncontrado = cidadeRepository.findByName(cidadeRecebida.getNome_cidade());
@@ -66,6 +70,7 @@ public class CidadeService {
         return cidadeRepository.save(cidadeRecebida.convertToModel());
     }
 
+    //---------------------------------------------Update---------------------------------------------------------------
     public Cidade update(CidadeSimpleDTO cidadeRecebida, Long id_cidade) {
 
 
@@ -90,6 +95,7 @@ public class CidadeService {
         return cidadeRepository.save(cidadeEncontradoId.get());
     }
 
+    //---------------------------------------------Delete---------------------------------------------------------------
     public void delete(Long id_cidade) {
         //Usando método listById para buscar e validar registro com ID informado
         Cidade cidadeEncotrado = listById(id_cidade);

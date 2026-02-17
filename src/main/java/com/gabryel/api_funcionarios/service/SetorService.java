@@ -21,6 +21,7 @@ public class SetorService {
         this.setorRepository = setorRepository;
     }
 
+    //---------------------------------------------ListAll--------------------------------------------------------------
     public List<Setor> listAll(int page) {
         //Buscando e convertendo cada registro para DTO
         Page<Setor> setoresEncontrados = setorRepository
@@ -36,6 +37,7 @@ public class SetorService {
                 .getContent();
     }
 
+    //---------------------------------------------ListById-------------------------------------------------------------
     public Setor listById(Long id_setor) {
         //Validando se foi encontrado registro com o ID informado
         Optional<Setor> setorEncontrado = setorRepository.findById(id_setor);
@@ -46,6 +48,8 @@ public class SetorService {
         return setorEncontrado.get();
     }
 
+
+    //---------------------------------------------Save-----------------------------------------------------------------
     public Setor save(SetorSimpleDTO setorRecebido) {
         //Validando se nome já existe
         Optional<Setor> setorEncontrado = setorRepository.findByName(setorRecebido.getNome_setor());
@@ -57,6 +61,7 @@ public class SetorService {
         return setorRepository.save(setorRecebido.convertToModel());
     }
 
+    //---------------------------------------------Update---------------------------------------------------------------
     public Setor update(SetorSimpleDTO setorRecebido, Long id_setor) {
         //Validando se existe registro com o ID informado
         Optional<Setor> setorEncontradoId = setorRepository.findById(id_setor);
@@ -79,6 +84,7 @@ public class SetorService {
         return setorRepository.save(setorEncontradoId.get());
     }
 
+    //---------------------------------------------Delete---------------------------------------------------------------
     public void delete(Long id_setor) {
         //Usando método listById para buscar e validar registro com ID informado
         Setor cargoEncotrado = listById(id_setor);

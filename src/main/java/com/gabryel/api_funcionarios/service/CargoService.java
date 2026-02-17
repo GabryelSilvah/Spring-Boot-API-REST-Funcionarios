@@ -20,7 +20,7 @@ public class CargoService {
         this.cargoRepository = cargoRepository;
     }
 
-
+    //---------------------------------------------ListAll--------------------------------------------------------------
     public List<Cargo> listAll() {
         //Buscando e convertendo cada registro para DTO
         List<Cargo> cargosEncontrados = cargoRepository.findAll();
@@ -31,6 +31,7 @@ public class CargoService {
         return cargosEncontrados;
     }
 
+    //---------------------------------------------ListByID-------------------------------------------------------------
     public Cargo listById(Long id_cargo) {
         //Validando se foi encontrado registro com o ID informado
         Optional<Cargo> cargoEncontrado = cargoRepository.findById(id_cargo);
@@ -41,6 +42,7 @@ public class CargoService {
         return cargoEncontrado.get();
     }
 
+    //---------------------------------------------Save-----------------------------------------------------------------
     public Cargo save(CargoSimpleDTO cargoRecebido) {
         //Validando se nome já existe
         Optional<Cargo> cargoEncontrado = cargoRepository.findByName(cargoRecebido.getNome_cargo());
@@ -52,6 +54,7 @@ public class CargoService {
         return cargoRepository.save(cargoRecebido.convertToModel());
     }
 
+    //---------------------------------------------Update---------------------------------------------------------------
     public Cargo update(CargoSimpleDTO cargoRecebido, Long id_cargo) {
 
 
@@ -76,6 +79,7 @@ public class CargoService {
         return cargoRepository.save(cargoEncontradoId.get());
     }
 
+    //---------------------------------------------Delete---------------------------------------------------------------
     public void delete(Long id_cargo) {
         //Usando método listById para buscar e validar registro com ID informado
         Cargo cargoEncotrado = listById(id_cargo);
