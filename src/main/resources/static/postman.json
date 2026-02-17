@@ -1,0 +1,765 @@
+{
+  "info": {
+    "_postman_id": "b8b8378f-2fa4-4b36-842b-e36d84b4cc5c",
+    "name": "api_funcionarios",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32073946",
+    "_collection_link": "https://go.postman.co/collection/32073946-b8b8378f-2fa4-4b36-842b-e36d84b4cc5c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "cargo",
+      "item": [
+        {
+          "name": "Listar Todos os Cargos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{startUrl}}/v1/cargos/listar",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "cargos",
+                "listar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Cargo Por ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/cargos/listar/id/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "cargos",
+                "listar",
+                "id",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cadastrar Cargo",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome_cargo\":\"Inspetor I\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/cargos/registrar",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "cargos",
+                "registrar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Alterar Cargo",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome_cargo\":\"Inspetor II\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/cargos/alterar/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "cargos",
+                "alterar",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir Cargo",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome_cargo\":\"Analista\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/cargos/excluir/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "cargos",
+                "excluir",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "cidade",
+      "item": [
+        {
+          "name": "Listar Todos as Cidades",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{startUrl}}/v1/cidades/listar/pagina/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "cidades",
+                "listar",
+                "pagina",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Cidade Por ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/cidades/listar/id/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "cidades",
+                "listar",
+                "id",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cadastrar Cidade",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome_cidade\":\"Minas Gerais\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/cidades/registrar",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "cidades",
+                "registrar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Alterar Cidade",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome_cidade\":\"Paraná\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/cidades/alterar/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "cidades",
+                "alterar",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir Cidade",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome_cargo\":\"Analista\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/cidades/excluir/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "cidades",
+                "excluir",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "setor",
+      "item": [
+        {
+          "name": "Listar Todos os Setores",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{startUrl}}/v1/setores/listar/pagina/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "setores",
+                "listar",
+                "pagina",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Setor Por ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/setores/listar/id/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "setores",
+                "listar",
+                "id",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cadastrar Setor",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome_setor\":\"Pesquisas\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/setores/registrar",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "setores",
+                "registrar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Alterar Setor",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome_setor\": \"Pesquisa e desenvolvimento\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/setores/alterar/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "setores",
+                "alterar",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir Cargo Copy",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome_cargo\":\"Analista\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/setores/excluir/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "setores",
+                "excluir",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "endereço",
+      "item": [
+        {
+          "name": "Listar Todos os Endereços",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{startUrl}}/v1/enderecos/listar/pagina/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "enderecos",
+                "listar",
+                "pagina",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Endereço Por ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/enderecos/listar/id/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "enderecos",
+                "listar",
+                "id",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cadastrar Endereço",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"cep_endereco\": 12345678,\r\n    \"id_cidade_endereco\": 1,\r\n    \"bairro_endereco\": \"Guará\",\r\n    \"complemento_endereco\": \"Rua m, casa 756\",\r\n    \"id_funcionario_endereco\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/enderecos/registrar",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "enderecos",
+                "registrar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Alterar Endereço",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"cep_endereco\": 12345678,\r\n    \"id_cidade_endereco\": 1,\r\n    \"bairro_endereco\": \"Guará II\",\r\n    \"complemento_endereco\": \"Rua m, casa 756\",\r\n    \"id_funcionario_endereco\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/enderecos/alterar/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "enderecos",
+                "alterar",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir Endereço",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome_cargo\":\"Analista\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/enderecos/excluir/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "enderecos",
+                "excluir",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "funcionario",
+      "item": [
+        {
+          "name": "Listar Todos os Funcionários",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{startUrl}}/v1/funcionarios/listar/pagina/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "funcionarios",
+                "listar",
+                "pagina",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Funcionário Por ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/funcionarios/listar/id/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "funcionarios",
+                "listar",
+                "id",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cadastrar Funcionário",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome_funcionario\": \"Alicia Silva\",\r\n    \"ativo_funcionario\": false,\r\n    \"id_cargo_funcionario\":1,\r\n    \"id_setor_funcionario\": 1,\r\n    \"enderecos_funcionario\": [\r\n        {\r\n            \"cep_endereco\": 12345678,\r\n            \"id_cidade_endereco\": 1,\r\n            \"bairro_endereco\": \"Guará\",\r\n            \"complemento_endereco\": \"Rua m, casa 756\"\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/funcionarios/registrar",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "funcionarios",
+                "registrar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Alterar Funcionário",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome_funcionario\": \"Alicia Silva Costa\",\r\n    \"ativo_funcionario\": false,\r\n    \"id_cargo_funcionario\": 2,\r\n    \"id_setor_funcionario\": 2,\r\n    \"enderecos_funcionario\": [\r\n        {\r\n            \"id_endereco\": 1,\r\n            \"cep_endereco\": 12345678,\r\n            \"id_cidade_endereco\": 1,\r\n            \"bairro_endereco\": \"Guará\",\r\n            \"complemento_endereco\": \"Rua m, casa 756\"\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/funcionarios/alterar/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "funcionarios",
+                "alterar",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Alterar Status Funcionário",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/funcionarios/alterar/1/status/true",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "funcionarios",
+                "alterar",
+                "1",
+                "status",
+                "true"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir Funcionário",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome_cargo\":\"Analista\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{startUrl}}/v1/funcionarios/excluir/1",
+              "host": [
+                "{{startUrl}}"
+              ],
+              "path": [
+                "v1",
+                "funcionarios",
+                "excluir",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
