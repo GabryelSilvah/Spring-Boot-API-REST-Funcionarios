@@ -1,0 +1,365 @@
+2026-02-13 15:22:09 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-02-13 15:22:09 [Test worker] INFO  c.g.a.service.CargoServiceTest - Starting CargoServiceTest using Java 21.0.7 with PID 10940 (started by Gabryel Silvah in C:\Users\Gabryel Silvah\Downloads\api_funcionarios_v3)
+2026-02-13 15:22:09 [Test worker] INFO  c.g.a.service.CargoServiceTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-13 15:22:11 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-13 15:22:11 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 117 ms. Found 5 JPA repository interfaces.
+2026-02-13 15:22:12 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-13 15:22:12 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.41.Final
+2026-02-13 15:22:12 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-13 15:22:13 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-13 15:22:13 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-13 15:22:13 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@279e1422
+2026-02-13 15:22:13 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-13 15:22:14 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-13 15:22:14 [Test worker] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-13 15:22:16 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - set client_min_messages = WARNING
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FKt491q5x39ieivnbxhnj6n1xqe
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FK5u9893453por70lfl8pck9jed
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKm4q37kidsr57yvdkctb7iieho
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKq2gj8hyh03a9ifssm6rlnktj5
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - drop table if exists cargos cascade
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - drop table if exists cidades cascade
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - drop table if exists enderecos cascade
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - drop table if exists funcionarios cascade
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - drop table if exists setores cascade
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists cargo_sequence
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists cidade_sequence
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists endereco_sequence
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists funcionario_sequence
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists setor_sequence
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - create sequence cargo_sequence start with 1 increment by 1
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - create sequence cidade_sequence start with 1 increment by 1
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - create sequence endereco_sequence start with 1 increment by 1
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - create sequence funcionario_sequence start with 1 increment by 1
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - create sequence setor_sequence start with 1 increment by 1
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - create table cargos (id_cargo bigint not null, nome_cargo varchar(40) not null, primary key (id_cargo))
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - create table cidades (id_cidade bigint not null, nome_cidade varchar(40) not null, primary key (id_cidade))
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - create table enderecos (cep_endereco integer not null, fk_cidade_endereco bigint not null, fk_funcionario_endereco bigint not null, id_endereco bigint not null, bairro_endereco varchar(40) not null, complemento_endereco varchar(40) not null, primary key (id_endereco))
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - create table funcionarios (ativo_funcionario boolean default false not null, date_create_funcionario bigint not null, date_update_funcionario bigint not null, fk_cargo_funcionario bigint not null, fk_setor_funcionario bigint not null, id_funcionario bigint not null, nome_funcionario varchar(90) not null, primary key (id_funcionario))
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - create table setores (id_setor bigint not null, nome_setor varchar(40) not null, primary key (id_setor))
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos add constraint FKt491q5x39ieivnbxhnj6n1xqe foreign key (fk_cidade_endereco) references cidades
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos add constraint FK5u9893453por70lfl8pck9jed foreign key (fk_funcionario_endereco) references funcionarios
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios add constraint FKm4q37kidsr57yvdkctb7iieho foreign key (fk_cargo_funcionario) references cargos
+2026-02-13 15:22:16 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios add constraint FKq2gj8hyh03a9ifssm6rlnktj5 foreign key (fk_setor_funcionario) references setores
+2026-02-13 15:22:16 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-13 15:22:17 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-13 15:22:17 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-13 15:22:18 [Test worker] INFO  c.g.a.service.CargoServiceTest - Started CargoServiceTest in 10.019 seconds (process running for 12.732)
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - set client_min_messages = WARNING
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FKt491q5x39ieivnbxhnj6n1xqe
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FK5u9893453por70lfl8pck9jed
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKm4q37kidsr57yvdkctb7iieho
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKq2gj8hyh03a9ifssm6rlnktj5
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists cargos cascade
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists cidades cascade
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists enderecos cascade
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists funcionarios cascade
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists setores cascade
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists cargo_sequence
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists cidade_sequence
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists endereco_sequence
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists funcionario_sequence
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists setor_sequence
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-13 15:22:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-13 16:21:02 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-02-13 16:21:02 [Test worker] INFO  c.g.a.service.CargoServiceTest - Starting CargoServiceTest using Java 21.0.7 with PID 12968 (started by Gabryel Silvah in C:\Users\Gabryel Silvah\Downloads\api_funcionarios_v3)
+2026-02-13 16:21:02 [Test worker] INFO  c.g.a.service.CargoServiceTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-13 16:21:03 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-13 16:21:03 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 104 ms. Found 5 JPA repository interfaces.
+2026-02-13 16:21:04 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-13 16:21:05 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.41.Final
+2026-02-13 16:21:05 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-13 16:21:05 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-13 16:21:05 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-13 16:21:06 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@af3295f
+2026-02-13 16:21:06 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-13 16:21:06 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-13 16:21:06 [Test worker] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-13 16:21:08 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - set client_min_messages = WARNING
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FKt491q5x39ieivnbxhnj6n1xqe
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FK5u9893453por70lfl8pck9jed
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKm4q37kidsr57yvdkctb7iieho
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKq2gj8hyh03a9ifssm6rlnktj5
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - drop table if exists cargos cascade
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - drop table if exists cidades cascade
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - drop table if exists enderecos cascade
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - drop table if exists funcionarios cascade
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - drop table if exists setores cascade
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists cargo_sequence
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists cidade_sequence
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists endereco_sequence
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists funcionario_sequence
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists setor_sequence
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - create sequence cargo_sequence start with 1 increment by 1
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - create sequence cidade_sequence start with 1 increment by 1
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - create sequence endereco_sequence start with 1 increment by 1
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - create sequence funcionario_sequence start with 1 increment by 1
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - create sequence setor_sequence start with 1 increment by 1
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - create table cargos (id_cargo bigint not null, nome_cargo varchar(40) not null, primary key (id_cargo))
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - create table cidades (id_cidade bigint not null, nome_cidade varchar(40) not null, primary key (id_cidade))
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - create table enderecos (cep_endereco integer not null, fk_cidade_endereco bigint not null, fk_funcionario_endereco bigint not null, id_endereco bigint not null, bairro_endereco varchar(40) not null, complemento_endereco varchar(40) not null, primary key (id_endereco))
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - create table funcionarios (ativo_funcionario boolean default false not null, date_create_funcionario bigint not null, date_update_funcionario bigint not null, fk_cargo_funcionario bigint not null, fk_setor_funcionario bigint not null, id_funcionario bigint not null, nome_funcionario varchar(90) not null, primary key (id_funcionario))
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - create table setores (id_setor bigint not null, nome_setor varchar(40) not null, primary key (id_setor))
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos add constraint FKt491q5x39ieivnbxhnj6n1xqe foreign key (fk_cidade_endereco) references cidades
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos add constraint FK5u9893453por70lfl8pck9jed foreign key (fk_funcionario_endereco) references funcionarios
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios add constraint FKm4q37kidsr57yvdkctb7iieho foreign key (fk_cargo_funcionario) references cargos
+2026-02-13 16:21:08 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios add constraint FKq2gj8hyh03a9ifssm6rlnktj5 foreign key (fk_setor_funcionario) references setores
+2026-02-13 16:21:08 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-13 16:21:08 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-13 16:21:09 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-13 16:21:10 [Test worker] INFO  c.g.a.service.CargoServiceTest - Started CargoServiceTest in 8.442 seconds (process running for 10.771)
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - set client_min_messages = WARNING
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FKt491q5x39ieivnbxhnj6n1xqe
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FK5u9893453por70lfl8pck9jed
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKm4q37kidsr57yvdkctb7iieho
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKq2gj8hyh03a9ifssm6rlnktj5
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists cargos cascade
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists cidades cascade
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists enderecos cascade
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists funcionarios cascade
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists setores cascade
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists cargo_sequence
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists cidade_sequence
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists endereco_sequence
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists funcionario_sequence
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists setor_sequence
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-13 16:21:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-13 16:21:30 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-02-13 16:21:30 [Test worker] INFO  c.g.a.service.CargoServiceTest - Starting CargoServiceTest using Java 21.0.7 with PID 8076 (started by Gabryel Silvah in C:\Users\Gabryel Silvah\Downloads\api_funcionarios_v3)
+2026-02-13 16:21:30 [Test worker] INFO  c.g.a.service.CargoServiceTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-13 16:21:31 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-13 16:21:31 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 5 JPA repository interfaces.
+2026-02-13 16:21:32 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-13 16:21:32 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.41.Final
+2026-02-13 16:21:32 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-13 16:21:33 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-13 16:21:33 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-13 16:21:33 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@af3295f
+2026-02-13 16:21:33 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-13 16:21:33 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-13 16:21:33 [Test worker] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-13 16:21:35 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - set client_min_messages = WARNING
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FKt491q5x39ieivnbxhnj6n1xqe
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FK5u9893453por70lfl8pck9jed
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKm4q37kidsr57yvdkctb7iieho
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKq2gj8hyh03a9ifssm6rlnktj5
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - drop table if exists cargos cascade
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - drop table if exists cidades cascade
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - drop table if exists enderecos cascade
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - drop table if exists funcionarios cascade
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - drop table if exists setores cascade
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists cargo_sequence
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists cidade_sequence
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists endereco_sequence
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists funcionario_sequence
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists setor_sequence
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - create sequence cargo_sequence start with 1 increment by 1
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - create sequence cidade_sequence start with 1 increment by 1
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - create sequence endereco_sequence start with 1 increment by 1
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - create sequence funcionario_sequence start with 1 increment by 1
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - create sequence setor_sequence start with 1 increment by 1
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - create table cargos (id_cargo bigint not null, nome_cargo varchar(40) not null, primary key (id_cargo))
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - create table cidades (id_cidade bigint not null, nome_cidade varchar(40) not null, primary key (id_cidade))
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - create table enderecos (cep_endereco integer not null, fk_cidade_endereco bigint not null, fk_funcionario_endereco bigint not null, id_endereco bigint not null, bairro_endereco varchar(40) not null, complemento_endereco varchar(40) not null, primary key (id_endereco))
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - create table funcionarios (ativo_funcionario boolean default false not null, date_create_funcionario bigint not null, date_update_funcionario bigint not null, fk_cargo_funcionario bigint not null, fk_setor_funcionario bigint not null, id_funcionario bigint not null, nome_funcionario varchar(90) not null, primary key (id_funcionario))
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - create table setores (id_setor bigint not null, nome_setor varchar(40) not null, primary key (id_setor))
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos add constraint FKt491q5x39ieivnbxhnj6n1xqe foreign key (fk_cidade_endereco) references cidades
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos add constraint FK5u9893453por70lfl8pck9jed foreign key (fk_funcionario_endereco) references funcionarios
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios add constraint FKm4q37kidsr57yvdkctb7iieho foreign key (fk_cargo_funcionario) references cargos
+2026-02-13 16:21:35 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios add constraint FKq2gj8hyh03a9ifssm6rlnktj5 foreign key (fk_setor_funcionario) references setores
+2026-02-13 16:21:35 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-13 16:21:36 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-13 16:21:36 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-13 16:21:37 [Test worker] INFO  c.g.a.service.CargoServiceTest - Started CargoServiceTest in 7.942 seconds (process running for 10.041)
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - set client_min_messages = WARNING
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FKt491q5x39ieivnbxhnj6n1xqe
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FK5u9893453por70lfl8pck9jed
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKm4q37kidsr57yvdkctb7iieho
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKq2gj8hyh03a9ifssm6rlnktj5
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists cargos cascade
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists cidades cascade
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists enderecos cascade
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists funcionarios cascade
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists setores cascade
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists cargo_sequence
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists cidade_sequence
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists endereco_sequence
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists funcionario_sequence
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists setor_sequence
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-13 16:21:38 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-13 16:22:26 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-02-13 16:22:26 [Test worker] INFO  c.g.a.service.CargoServiceTest - Starting CargoServiceTest using Java 21.0.7 with PID 8032 (started by Gabryel Silvah in C:\Users\Gabryel Silvah\Downloads\api_funcionarios_v3)
+2026-02-13 16:22:26 [Test worker] INFO  c.g.a.service.CargoServiceTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-13 16:22:27 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-13 16:22:27 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 105 ms. Found 5 JPA repository interfaces.
+2026-02-13 16:22:28 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-13 16:22:28 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.41.Final
+2026-02-13 16:22:28 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-13 16:22:29 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-13 16:22:29 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-13 16:22:29 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7d5a0b14
+2026-02-13 16:22:29 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-13 16:22:29 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-13 16:22:29 [Test worker] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-13 16:22:31 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - set client_min_messages = WARNING
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FKt491q5x39ieivnbxhnj6n1xqe
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FK5u9893453por70lfl8pck9jed
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKm4q37kidsr57yvdkctb7iieho
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKq2gj8hyh03a9ifssm6rlnktj5
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - drop table if exists cargos cascade
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - drop table if exists cidades cascade
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - drop table if exists enderecos cascade
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - drop table if exists funcionarios cascade
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - drop table if exists setores cascade
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists cargo_sequence
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists cidade_sequence
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists endereco_sequence
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists funcionario_sequence
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists setor_sequence
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - create sequence cargo_sequence start with 1 increment by 1
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - create sequence cidade_sequence start with 1 increment by 1
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - create sequence endereco_sequence start with 1 increment by 1
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - create sequence funcionario_sequence start with 1 increment by 1
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - create sequence setor_sequence start with 1 increment by 1
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - create table cargos (id_cargo bigint not null, nome_cargo varchar(40) not null, primary key (id_cargo))
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - create table cidades (id_cidade bigint not null, nome_cidade varchar(40) not null, primary key (id_cidade))
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - create table enderecos (cep_endereco integer not null, fk_cidade_endereco bigint not null, fk_funcionario_endereco bigint not null, id_endereco bigint not null, bairro_endereco varchar(40) not null, complemento_endereco varchar(40) not null, primary key (id_endereco))
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - create table funcionarios (ativo_funcionario boolean default false not null, date_create_funcionario bigint not null, date_update_funcionario bigint not null, fk_cargo_funcionario bigint not null, fk_setor_funcionario bigint not null, id_funcionario bigint not null, nome_funcionario varchar(90) not null, primary key (id_funcionario))
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - create table setores (id_setor bigint not null, nome_setor varchar(40) not null, primary key (id_setor))
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos add constraint FKt491q5x39ieivnbxhnj6n1xqe foreign key (fk_cidade_endereco) references cidades
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos add constraint FK5u9893453por70lfl8pck9jed foreign key (fk_funcionario_endereco) references funcionarios
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios add constraint FKm4q37kidsr57yvdkctb7iieho foreign key (fk_cargo_funcionario) references cargos
+2026-02-13 16:22:31 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios add constraint FKq2gj8hyh03a9ifssm6rlnktj5 foreign key (fk_setor_funcionario) references setores
+2026-02-13 16:22:31 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-13 16:22:31 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-13 16:22:32 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-13 16:22:33 [Test worker] INFO  c.g.a.service.CargoServiceTest - Started CargoServiceTest in 7.76 seconds (process running for 9.813)
+2026-02-13 16:22:33 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-13 16:22:33 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - set client_min_messages = WARNING
+2026-02-13 16:22:33 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FKt491q5x39ieivnbxhnj6n1xqe
+2026-02-13 16:22:33 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FK5u9893453por70lfl8pck9jed
+2026-02-13 16:22:33 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKm4q37kidsr57yvdkctb7iieho
+2026-02-13 16:22:33 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKq2gj8hyh03a9ifssm6rlnktj5
+2026-02-13 16:22:33 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists cargos cascade
+2026-02-13 16:22:33 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists cidades cascade
+2026-02-13 16:22:33 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists enderecos cascade
+2026-02-13 16:22:33 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists funcionarios cascade
+2026-02-13 16:22:33 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists setores cascade
+2026-02-13 16:22:33 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists cargo_sequence
+2026-02-13 16:22:34 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists cidade_sequence
+2026-02-13 16:22:34 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists endereco_sequence
+2026-02-13 16:22:34 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists funcionario_sequence
+2026-02-13 16:22:34 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists setor_sequence
+2026-02-13 16:22:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-13 16:22:34 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-13 16:23:12 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-02-13 16:23:13 [Test worker] INFO  c.g.a.service.CargoServiceTest - Starting CargoServiceTest using Java 21.0.7 with PID 5072 (started by Gabryel Silvah in C:\Users\Gabryel Silvah\Downloads\api_funcionarios_v3)
+2026-02-13 16:23:13 [Test worker] INFO  c.g.a.service.CargoServiceTest - No active profile set, falling back to 1 default profile: "default"
+2026-02-13 16:23:14 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-13 16:23:14 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 125 ms. Found 5 JPA repository interfaces.
+2026-02-13 16:23:16 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-13 16:23:16 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.41.Final
+2026-02-13 16:23:16 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-13 16:23:16 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-13 16:23:17 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-13 16:23:17 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@72ec16f8
+2026-02-13 16:23:17 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-13 16:23:17 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-13 16:23:17 [Test worker] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-13 16:23:19 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - set client_min_messages = WARNING
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FKt491q5x39ieivnbxhnj6n1xqe
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FK5u9893453por70lfl8pck9jed
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKm4q37kidsr57yvdkctb7iieho
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKq2gj8hyh03a9ifssm6rlnktj5
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - drop table if exists cargos cascade
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - drop table if exists cidades cascade
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - drop table if exists enderecos cascade
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - drop table if exists funcionarios cascade
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - drop table if exists setores cascade
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists cargo_sequence
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists cidade_sequence
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists endereco_sequence
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists funcionario_sequence
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - drop sequence if exists setor_sequence
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - create sequence cargo_sequence start with 1 increment by 1
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - create sequence cidade_sequence start with 1 increment by 1
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - create sequence endereco_sequence start with 1 increment by 1
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - create sequence funcionario_sequence start with 1 increment by 1
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - create sequence setor_sequence start with 1 increment by 1
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - create table cargos (id_cargo bigint not null, nome_cargo varchar(40) not null, primary key (id_cargo))
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - create table cidades (id_cidade bigint not null, nome_cidade varchar(40) not null, primary key (id_cidade))
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - create table enderecos (cep_endereco integer not null, fk_cidade_endereco bigint not null, fk_funcionario_endereco bigint not null, id_endereco bigint not null, bairro_endereco varchar(40) not null, complemento_endereco varchar(40) not null, primary key (id_endereco))
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - create table funcionarios (ativo_funcionario boolean default false not null, date_create_funcionario bigint not null, date_update_funcionario bigint not null, fk_cargo_funcionario bigint not null, fk_setor_funcionario bigint not null, id_funcionario bigint not null, nome_funcionario varchar(90) not null, primary key (id_funcionario))
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - create table setores (id_setor bigint not null, nome_setor varchar(40) not null, primary key (id_setor))
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos add constraint FKt491q5x39ieivnbxhnj6n1xqe foreign key (fk_cidade_endereco) references cidades
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - alter table if exists enderecos add constraint FK5u9893453por70lfl8pck9jed foreign key (fk_funcionario_endereco) references funcionarios
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios add constraint FKm4q37kidsr57yvdkctb7iieho foreign key (fk_cargo_funcionario) references cargos
+2026-02-13 16:23:19 [Test worker] DEBUG org.hibernate.SQL - alter table if exists funcionarios add constraint FKq2gj8hyh03a9ifssm6rlnktj5 foreign key (fk_setor_funcionario) references setores
+2026-02-13 16:23:19 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-13 16:23:20 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-13 16:23:20 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-13 16:23:21 [Test worker] INFO  c.g.a.service.CargoServiceTest - Started CargoServiceTest in 9.243 seconds (process running for 11.646)
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - set client_min_messages = WARNING
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FKt491q5x39ieivnbxhnj6n1xqe
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists enderecos drop constraint if exists FK5u9893453por70lfl8pck9jed
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKm4q37kidsr57yvdkctb7iieho
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - alter table if exists funcionarios drop constraint if exists FKq2gj8hyh03a9ifssm6rlnktj5
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists cargos cascade
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists cidades cascade
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists enderecos cascade
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists funcionarios cascade
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop table if exists setores cascade
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists cargo_sequence
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists cidade_sequence
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists endereco_sequence
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists funcionario_sequence
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL - drop sequence if exists setor_sequence
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-13 16:23:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
